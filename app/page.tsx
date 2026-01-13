@@ -10,6 +10,8 @@ import { NavLink, SocialLink, MobileNavLink } from "./components/navigation-link
 
 export default function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const currentYear = new Date().getFullYear();
   
   const skills = {
     Frontend: ["React", "Next.js", "TypeScript", "TailwindCSS", "ShadCN"],
@@ -279,9 +281,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        <footer>
-          testing only
-        </footer>
+        <footer className="px-4 sm:px-6 lg:px-12 border-t border-border py-4 text-center text-sm">© {currentYear}. Built with <Link href="https://nextjs.org/" className="hover:text-accent transition-colors">Next.js 16</Link>. <Link href="https://github.com/zelth/zelth-dev" className="hover:text-accent transition-colors">Source on GitHub ↗</Link></footer>
       </main>
     </div>
   );
