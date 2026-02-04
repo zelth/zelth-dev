@@ -197,18 +197,20 @@ const HeroSection = ({ isMobile }: { isMobile: boolean }) => {
 const ExperienceSection = () => {
   return (
     <section id="experience" className="px-4 sm:px-6 lg:px-12 py-12 lg:py-20 border-t border-border">
-      <h3 className="text-2xl sm:text-3xl font-bold mb-8 lg:mb-12">Experience</h3>
-      <motion.div
-        className="space-y-8 lg:space-y-12 max-w-5xl mx-auto"
-        variants={experienceContainerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
-      >
-        {EXPERIENCE.map((exp) => (
-          <ExperienceItem key={exp.id} experience={exp}/>
-        ))}
-      </motion.div>
+      <div className="max-w-5xl mx-auto">
+        <h3 className="text-2xl sm:text-3xl font-bold mb-8 lg:mb-12">Experience</h3>
+        <motion.div
+          className="space-y-8 lg:space-y-12"
+          variants={experienceContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          {EXPERIENCE.map((exp) => (
+            <ExperienceItem key={exp.id} experience={exp}/>
+          ))}
+        </motion.div>
+      </div>
     </section>
   )
 }
@@ -238,18 +240,20 @@ const ExperienceItem = ({ experience }: { experience: Experience }) => {
 const ProjectSection = () => {
   return (
     <section id="projects" className="px-4 sm:px-6 lg:px-12 py-12 lg:py-20 border-t border-border">
-      <h3 className="text-2xl sm:text-3xl font-bold mb-8 lg:mb-12">Featured Projects</h3>
-      <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto"
-        variants={projectsContainerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.25 }}
-      >
-        {PROJECTS.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </motion.div>
+      <div className="max-w-5xl mx-auto">
+        <h3 className="text-2xl sm:text-3xl font-bold mb-8 lg:mb-12">Featured Projects</h3>
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8"
+          variants={projectsContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.25 }}
+        >
+          {PROJECTS.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </motion.div>
+      </div>
     </section>
   )
 }
@@ -299,26 +303,28 @@ const SkillsSection = () => {
 
   return (
     <section id="skills" className="px-4 sm:px-6 lg:px-12 py-12 lg:py-20 border-t border-border">
-      <h3 className="text-2xl sm:text-3xl font-bold mb-8 lg:mb-12">Skills & Tools</h3>
-      <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 max-w-5xl mx-auto"
-        variants={skillsContainerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.25 }}
-      >
-        {categories.map((category) => {
-          const skillsInCategory = SKILLS.filter(skill => skill.category === category);
+      <div className="max-w-5xl mx-auto">
+        <h3 className="text-2xl sm:text-3xl font-bold mb-8 lg:mb-12">Skills & Tools</h3>
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12"
+          variants={skillsContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.25 }}
+        >
+          {categories.map((category) => {
+            const skillsInCategory = SKILLS.filter(skill => skill.category === category);
 
-          return (
-            <SkillCategory
-              key={category}
-              category={category}
-              skills={skillsInCategory}
-            />
-          );
-        })}
-      </motion.div>
+            return (
+              <SkillCategory
+                key={category}
+                category={category}
+                skills={skillsInCategory}
+              />
+            );
+          })}
+        </motion.div>
+      </div>
     </section>
   );
 };
